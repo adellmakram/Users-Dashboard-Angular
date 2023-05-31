@@ -1,0 +1,30 @@
+<div class="header py-2" *ngIf="User">
+    <div class="d-flex justify-content-evenly align-items-center" style="height: 50px;">
+        <h4 class="my-0">{{User.name}}</h4>
+
+        <div class="d-flex flex-column">
+            <div>{{User.email}} </div>
+            <div>{{User.phone}}</div>
+        </div>
+
+        <div class="d-flex flex-column">
+            <div>Address </div>
+            <div>{{User.address.suite}} {{User.address.street}} Street</div>
+        </div>
+    </div>
+</div>
+
+<div class="m-5" *ngIf="User && albums">
+    <h2 class="title text-center">{{User.name}}'s Albums</h2>
+    <hr>
+    <div class="d-flex flex-row flex-wrap">
+        <div *ngFor="let a of albums" class="m-auto">
+            <div class="card text-bg-light m-2" style="width: 18rem;">
+                <div class="card-header text-light"><a href="users/photos/{{User.id}}/{{a.id}}">{{a.title}}</a></div>
+                <div class="card-body">
+                    <p class="card-text">50 Photos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

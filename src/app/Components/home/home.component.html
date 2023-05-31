@@ -1,0 +1,31 @@
+<div class="header py-2">
+    <div class="w-75 m-auto d-flex justify-content-between align-items-center" style="height: 50px;">
+        <h4 class="my-0">Users</h4>
+        <button type="button" class="btn" (click)="OpenAddPopup()">+ Add User</button>
+    </div>
+</div>
+
+<table class="table table-striped table-hover table-bordered text-center mt-3" *ngIf="users">
+    <thead>
+      <tr>
+        <th></th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Number</th>
+        <th scope="col">Address</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users" id="{{u.id}}">
+        <td><input type="checkbox" value="{{u.id}}"></td>
+        <td><a href="/users/albums/{{u.id}}">{{u.name}}</a></td>
+        <td>{{u.email}}</td>
+        <td>{{u.phone}}</td>
+        <td>{{u.address.city}} / {{u.address.street}} / {{u.address.suite}}</td>
+        <td><a class="btn btn-outline-success" (click)="OpenEditPopup(u.id)">Update</a></td>
+        <td><p class="btn btn-outline-danger" (click)="deleteUser(u)">Delete</p></td>
+      </tr>
+    </tbody>
+  </table>

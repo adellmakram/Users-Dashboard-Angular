@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.my-popup-class {
+    width: 700px;
+    height: 450px;
+    position: absolute !important;
+    top: 10%;
+    left: 25%;
+}
+

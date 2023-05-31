@@ -1,0 +1,14 @@
+.header{
+    background-color: #732ff9;
+    color: #FFF;
+}
+.btn{
+    background-color: #FFF;
+    color: #000;
+}
+.btn:hover{
+    border: solid 1px #000;
+}
+td a, td{
+    color: #000 !important;
+}
